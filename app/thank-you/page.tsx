@@ -1,89 +1,100 @@
-import Image from "next/image";
 import Link from "next/link";
+
+const goldText: React.CSSProperties = {
+  background: "linear-gradient(135deg, #8c6b1f 0%, #d4af37 30%, #ffd700 52%, #d4af37 72%, #8c6b1f 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+};
 
 export default function ThankYou() {
   return (
     <main
-      className="min-h-screen flex flex-col justify-center px-6"
-      style={{ background: "var(--bg-page)" }}
+      style={{ background: "var(--bg-page)", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }}
+      className="px-8"
     >
-      <div className="max-w-lg mx-auto w-full">
-        <Image
-          src="/mk-logo.png"
-          alt="MK"
-          width={40}
-          height={40}
-          className="object-contain opacity-80 mb-16"
-        />
+      <div style={{ maxWidth: "480px", margin: "0 auto", width: "100%" }}>
+
+        <span
+          style={{
+            ...goldText,
+            fontFamily: "var(--font-cormorant)",
+            fontSize: "18px",
+            fontWeight: 500,
+            display: "block",
+            marginBottom: "64px",
+          }}
+        >
+          Remember by Micha
+        </span>
 
         <p
-          className="text-xs tracking-[0.2em] uppercase mb-8"
-          style={{ color: "var(--gold)", fontFamily: "var(--font-dm-sans)" }}
+          className="mb-8 text-xs tracking-[0.18em] uppercase"
+          style={{ fontFamily: "var(--font-jost)", fontWeight: 300, color: "var(--gold)" }}
         >
           It&apos;s on its way
         </p>
 
         <h1
-          className="text-4xl sm:text-5xl leading-[1.1] mb-8"
+          className="mb-8"
           style={{
-            fontFamily: "var(--font-playfair)",
-            color: "var(--cream)",
-            fontWeight: 700,
+            fontFamily: "var(--font-cormorant)",
+            fontSize: "clamp(42px, 6vw, 60px)",
+            fontWeight: 600,
+            lineHeight: 1.05,
+            color: "var(--text-primary)",
           }}
         >
           Check your inbox.
         </h1>
 
         <p
-          className="text-base leading-relaxed mb-12"
+          className="mb-10"
           style={{
-            color: "var(--cream-soft)",
-            fontFamily: "var(--font-dm-sans)",
+            fontFamily: "var(--font-jost)",
+            fontSize: "16px",
             fontWeight: 300,
+            color: "var(--text-secondary)",
+            lineHeight: 1.7,
           }}
         >
-          The Autopilot Audit link is on its way to you. Open the Notion template,
+          The Autopilot Audit link is on its way. Open the Notion template,
           follow the instructions inside, and be honest. This only works if you are.
         </p>
 
         <div
-          className="p-6 mb-12"
+          className="mb-12 p-5"
           style={{
-            border: "1px solid rgba(93, 63, 211, 0.3)",
-            background: "rgba(93, 63, 211, 0.06)",
+            border: "1px solid rgba(93, 63, 211, 0.2)",
+            background: "rgba(93, 63, 211, 0.04)",
             borderRadius: "4px",
           }}
         >
           <p
-            className="text-sm leading-relaxed"
             style={{
-              color: "var(--cream-soft)",
-              fontFamily: "var(--font-dm-sans)",
+              fontFamily: "var(--font-jost)",
+              fontSize: "14px",
               fontWeight: 300,
+              color: "var(--text-secondary)",
+              lineHeight: 1.7,
             }}
           >
             You&apos;re also subscribed to{" "}
-            <em
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontStyle: "italic",
-                color: "var(--cream)",
-              }}
-            >
+            <em style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: "16px", color: "var(--text-primary)" }}>
               Remember
             </em>
             {" "}— a weekly letter that goes one layer deeper every Friday.
-            First edition lands this week.
           </p>
         </div>
 
         <Link
           href="/"
-          className="text-sm transition-opacity hover:opacity-70"
           style={{
-            color: "var(--muted)",
-            fontFamily: "var(--font-dm-sans)",
+            fontFamily: "var(--font-jost)",
+            fontSize: "13px",
             fontWeight: 300,
+            color: "var(--text-muted)",
+            textDecoration: "none",
           }}
         >
           ← Back

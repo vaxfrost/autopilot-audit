@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
