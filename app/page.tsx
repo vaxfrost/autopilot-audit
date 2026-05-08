@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const areas = [
@@ -65,13 +66,22 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="px-8 pt-10 pb-0">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto flex items-center justify-between">
+          <Image
+            src="/mk-logo.png"
+            alt="MK"
+            width={36}
+            height={36}
+            className="object-contain"
+            style={{ filter: "brightness(0)" }}
+          />
           <span
             style={{
               ...goldText,
               fontFamily: "var(--font-cormorant)",
               fontSize: "18px",
               fontWeight: 500,
+              fontStyle: "italic",
               letterSpacing: "0.02em",
             }}
           >
